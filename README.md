@@ -11,14 +11,13 @@ This repository contains code generating the simulation results described in the
 This file contains the normalized shifted Legendre polynomials on the interval [0,1]. Please download and load this file before running the code below.
 
 - **`Code_Sec3-1.R`**  
-  Implements simulation studies examining the smooth tests via projected bootstrap, as described in Section 3.1 of [1].
+  This file implements simulation studies examining smooth tests via projected bootstrap, as described in Section 3.1 of [1], and generates plots of the simulation results.
 
 - **`Simulation_Code_Sec4-2_Proj_Boot.R`**
+  This file implements simulation studies examining smooth tests with K2-transformed orthonormal basis, as described in Section 4.2 of [1]. 
 
 - **`Plots_Code_Sec4-2.R`**  
-
-
-Please run the simulation code before running the plot code. 
+  This file generates histograms of the distributions considered in Section 4.2 of [1] and plots the simulation results. Please run the simulation code before running the plotting code.
 
 
 For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
