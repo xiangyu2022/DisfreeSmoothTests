@@ -5,7 +5,7 @@ This repository contains code generating the simulation results described in the
   *Distribution-free data-driven smooth tests without 𝜒2*  
   submitted to *Electronic Journal of Statistics*.
 
-## Code File Description
+## Files and repositary description
 
 - **`hjs.R`**
 This file contains the normalized shifted Legendre polynomials on the interval [0,1]. Please download and load this file before running the remaining code introduced below.
@@ -19,6 +19,8 @@ This file contains the normalized shifted Legendre polynomials on the interval [
 - **`Plots_Code_Sec4-2.R`**  
   This file generates histograms of the distributions considered in Section 4.2 of [1] and plots the simulation results. Please run the simulation code before running the plotting code.
 
+- **`Sec5_data`**
+  This depositary contains the dataset for the case study described in Section 5 of [1]. 
 
 For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
 
