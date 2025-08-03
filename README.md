@@ -5,7 +5,7 @@ This repository contains code generating the simulation results described in the
   *Distribution-free data-driven smooth tests without 𝜒2*  
   submitted to *Electronic Journal of Statistics*.
 
-## Code 
+## Code File Description
 
 Please run the simulation code before running the plot code. 
 
