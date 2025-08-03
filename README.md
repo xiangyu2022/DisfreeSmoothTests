@@ -8,7 +8,7 @@ This repository contains code generating the simulation results described in the
 ## Code File Description
 
 - **`hjs.R`**
-This file contains the normalized shifted Legendre polynomials on the interval [0,1]. Please download and load this file before running the code below.
+This file contains the normalized shifted Legendre polynomials on the interval [0,1]. Please download and load this file before running the remaining code introduced below.
 
 - **`Code_Sec3-1.R`**  
   This file implements simulation studies examining smooth tests via projected bootstrap, as described in Section 3.1 of [1], and generates plots of the simulation results.
