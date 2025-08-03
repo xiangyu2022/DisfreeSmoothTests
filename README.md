@@ -7,7 +7,7 @@ This repository contains code generating the simulation results described in the
 
 ## Code 
 
-Please run the 
+Please run the simulation code before running the plot code. 
 
 
 For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
