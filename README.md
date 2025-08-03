@@ -1,4 +1,4 @@
-# Distribution-free goodness-of-fit test for angular power spectrum models 
+# Distribution-free data-driven smooth tests without 𝜒2
 
 This repository contains code demonstrating how to apply distribution-free smooth tests to angular power spectrum models, as described in the following article.
 - **Zhang, X., Algeri, S. (2025+).**
