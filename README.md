@@ -14,7 +14,7 @@ This file contains the normalized shifted Legendre polynomials on the interval [
   This file implements simulation studies examining smooth tests via projected bootstrap, as described in Section 3.1 of [1], and generates plots of the simulation results.
 
 - **`Simulation_Code_Sec4-2_Proj_Boot.R`**
-  This file implements simulation studies examining smooth tests with K2-transformed orthonormal basis, as described in Section 4.2 of [1]. 
+  This file implements simulation studies described in Section 4.2 of [1]. 
 
 - **`Plots_Code_Sec4-2.R`**  
   This file generates histograms of the distributions considered in Section 4.2 of [1] and plots the simulation results. Please run the simulation code before running the plotting code.
