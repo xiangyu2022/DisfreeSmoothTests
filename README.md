@@ -7,6 +7,17 @@ This repository contains code generating the simulation results described in the
 
 ## Code File Description
 
+- **`hjs.R`**
+This file contains the normalized shifted Legendre polynomials on the interval [0,1]. Please download and load this file before running the code below.
+
+- **`Code_Sec3-1.R`**  
+  Implements simulation studies examining four combinations of data-generating models, as described in Sections III.B.1 and III.C.1 of [2].
+
+- **`Simulation_Code_Sec4-2_Proj_Boot.R`**
+
+- **`Plots_Code_Sec4-2.R`**  
+
+
 Please run the simulation code before running the plot code. 
 
 
