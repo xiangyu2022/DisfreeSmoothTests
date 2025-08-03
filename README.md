@@ -22,6 +22,9 @@ This file contains the normalized shifted Legendre polynomials on the interval [
 - **`Dataset_Sec5`**
   This repository contains the dataset for the case study described in Section 5 of [1]. 
 
+- **`Code_Sec5_Proj_Boot.R`**
+  This file implements a case study described in Section 5 of [1], and generates plots of the simulation results.
+
 For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
 
 
