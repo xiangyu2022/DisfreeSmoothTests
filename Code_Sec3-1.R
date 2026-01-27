@@ -7,7 +7,8 @@ library(truncnorm)
 library(LPBkg)
 library(orthopolynom)
 
-n=100;location=1;scale=2
+### Generate from the asymmetric Laplace distribution with location 0, scale 2, and kappa 0.1
+n=100;location=0;scale=2;kappa=0.1
 set.seed(1)
 xx=ralaplace(n, location, scale, kappa=0.1)
 alpha_func=function(x,theta) mean(sapply(x-theta, function(y) max(0,y)))
@@ -15,8 +16,10 @@ beta_func=function(x,theta) mean(sapply(x-theta, function(y) -min(0,y)))
 func = function(k){
   1-2*k^2/(1+k^2)+sqrt(2)/scale*(beta_func(xx,location)/k-alpha_func(xx,location)*k)
 }
+### Obtain the MLE for the kappa 
 MLE_ALP=uniroot(func,interval=c(.Machine$double.xmin^0.1,.Machine$double.xmax^0.1),tol=1e-10)$root
-## STEP1:
+
+### Obtain the score functions to have 
 dens <- function(x,pars) dalaplace(x, location, scale, kappa=MLE_ALP)
 G_obs <- function(x) {palaplace(x, location, scale, kappa=MLE_ALP)}
 
@@ -37,10 +40,9 @@ norm_score <- function(pars){
 }
 
 norm_score_function = norm_score(MLE_ALP)
-norm_score_func = norm_score_function$norm_score_func
 norm_score_func1 = norm_score_function$norm_score_func1
 
-## Calculating the efficient score functions
+## Calculating the tilde h 
 M1=10
 vj1=list();vj=list()
 vj[[1]] = function(x) return (1)
@@ -57,16 +59,15 @@ for (i in 1:M1+1){
 }
 
 B=100000
-## Bootstrap when using projected empirical process. 
+## Projected bootstrap
 set.seed(1)
 vn_boot <- numeric(M1)
-res_ks_proj <- res_tn_proj <- res_tn_order_proj <- numeric(B);
+res_tn_proj <- res_tn_order_proj <- numeric(B);
 for (i in 1:B){
   xx_obs= ralaplace(n, location, scale, kappa=MLE_ALP)
   for (j in 1:M1){
     vn_boot[j] <- sqrt(n)*mean(vj[[j+1]](xx_obs))
   }
-  res_ks_proj[i] <- max(abs(vn_boot))
   res_tn_proj[i] <-  max(cumsum((vn_boot)^2)/1:M1)
   res_tn_order_proj[i] <- max(cumsum(sort((vn_boot)^2, decreasing=TRUE)/1:M1))
   print(i)
@@ -74,11 +75,11 @@ for (i in 1:B){
 end_time1 <- Sys.time()
 end_time1 - start_time1
 
+## Classical parametric bootstrap  
+
 start_time2 <- Sys.time()
-## Bootstrap without using projected empirical process. 
 set.seed(1)
-res_ks_noproj <- res_tn_noproj  <- res_tn_order_noproj  <- numeric(B);
-vn_boot_noproj <- numeric(M1)
+res_tn_noproj  <- res_tn_order_noproj  <- numeric(B);vn_boot_noproj <- numeric(M1)
 for (i in 1:B){
   xx_boot = ralaplace(n, location, scale, kappa=MLE_ALP)
   func_boot = function(k){1-2*k^2/(1+k^2)+sqrt(2)/scale*(beta_func(xx_boot,location)/k-alpha_func(xx_boot,location)*k)}
@@ -87,7 +88,6 @@ for (i in 1:B){
   for (j in 1:M1){
     vn_boot_noproj[j] <- sqrt(n)*mean(hj[[j+1]](G_boot(xx_boot)))
     }
-  res_ks_noproj[i] <- max(abs(vn_boot_noproj))
   res_tn_noproj[i] <-  max(cumsum((vn_boot_noproj)^2)/1:M1)
   res_tn_order_noproj[i] <- max(cumsum(sort((vn_boot_noproj)^2, decreasing=TRUE)/1:M1))
   print(i)
@@ -95,11 +95,10 @@ for (i in 1:B){
 end_time2 <- Sys.time()
 end_time2 - start_time2
 
-
+## Monte Carlo
 set.seed(1)
 start_time3 <- Sys.time()
-res_ks_noproj_MC <- res_tn_noproj_MC  <- res_tn_order_noproj_MC  <- numeric(B);
-vn_boot_noproj_MC <- numeric(M1)
+res_tn_noproj_MC  <- res_tn_order_noproj_MC  <- numeric(B);vn_boot_noproj_MC <- numeric(M1)
 
 for (i in 1:B){
   xx_MC= ralaplace(n, location, scale, kappa=0.1)
@@ -110,7 +109,6 @@ for (i in 1:B){
   for (j in 1:M1){
     vn_boot_noproj_MC[j] <- sqrt(n)*mean(hj[[j+1]](G_MC(xx_MC)))
   }
-  res_ks_noproj_MC[i] <- max(abs(vn_boot_noproj_MC))
   res_tn_noproj_MC[i] <- max(cumsum((vn_boot_noproj_MC)^2)/1:M1)
   res_tn_order_noproj_MC[i] <- max(cumsum(sort((vn_boot_noproj_MC)^2, decreasing=TRUE)/1:M1))
   

@@ -206,7 +206,7 @@ for (i in 1:(M1)){
 
 
 ################### Steps before K2 ################### 
-B=100
+B=100000
 # Starting from here, we do the bootstrap obtaining the original distributions 
 res_tn_boot_f <- res_tn_order_boot_f <- numeric(B); vj_boot_f <- numeric(M1)
 for (i in 1:B){
@@ -471,7 +471,7 @@ set.seed(1)
 power_f = power_order_f = power_g1 = power_order_g1 = power_g2 = power_order_g2 = power_g3 = power_order_g3 = c()
 power_K2_g1 = power_order_K2_g1 = power_K2_g2 = power_order_K2_g2 = power_K2_g3 = power_order_K2_g3 = c()
 
-for (o in 1:100){
+for (o in 1:10000){
   indx = rmultinom(n=1,size=n,prob=c(1-p1-p2, p1,p2))
   xx_q = c(runif(indx[1],a,b), rtruncnorm(indx[2],a,b,mean=-5,sd=3),
            rtrunc(indx[3],spec="laplace",location=5,scale=3,a=a,b=b))
