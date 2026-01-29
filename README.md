@@ -36,5 +36,5 @@ For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu
 
 ## References
 [1] **Zhang, X., Algeri, S. (2025+).**
-  *Distribution-free data-driven smooth tests without 𝜒2*  
+  *A New Class of Asymptotically Distribution-Free Smooth Tests*  
   submitted to *Electronic Journal of Statistics*.
