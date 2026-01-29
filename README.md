@@ -1,4 +1,4 @@
-# Distribution-free data-driven smooth tests without 𝜒2
+# A New Class of Asymptotically Distribution-Free Smooth Tests
 
 This repository contains code generating the simulation results described in the following article.
 - **Zhang, X., Algeri, S. (2025+).**
