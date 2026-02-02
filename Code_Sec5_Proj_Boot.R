@@ -331,7 +331,7 @@ setEPS()
 postscript("Real_plot11.eps",width = 9, height = 6)
 par(mar = c(4, 5.5, 2, 2))
 qqplot(res_tn_boot_K2_g1, res_tn_boot_f, ylab=expression("Quantiles of "*hat(T)[n]*" from "*G[beta]),
-       xlab=expression("Quantiles of "*hat(T)[n]*" from "*F[gamma]*""),
+       xlab=expression("Quantiles of "*hat(T)[n]^K*" from "*F[gamma]*""),
        lwd = 2, cex.axis = 1.6, cex.lab = 1.8)
 abline(0,1)
 dev.off()
@@ -342,7 +342,8 @@ setEPS()
 postscript("Real_plot22.eps",width = 9, height = 6)
 par(mar = c(4, 5.5, 2, 2))
 qqplot(res_tn_order_boot_K2_g1, res_tn_order_boot_f, ylab=expression("Quantiles of "*tilde(T)[n]*" from "*G[beta]),
-       xlab=expression("Quantiles of "*tilde(T)[n]*" from "*F[gamma]),
+       xlab=expression("Quantiles of "*tilde(T)[n]^K*" from "*F[gamma]),
        lwd = 2, cex.axis = 1.6, cex.lab = 1.8)
 abline(0,1)
 dev.off()
+
