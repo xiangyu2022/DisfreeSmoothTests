@@ -1,7 +1,7 @@
 ## A New Class of Asymptotically Distribution-Free Smooth Tests
 
 This repository contains code generating the simulation results described in the following article.
-- **Zhang, X., Algeri, S. (2025+).**
+- **Zhang, X., Algeri, S. (2026+).**
   *A New Class of Asymptotically Distribution-Free Smooth Tests*  
   submitted to *Electronic Journal of Statistics*.
 
@@ -35,6 +35,6 @@ For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu
 
 
 ## References
-[1] **Zhang, X., Algeri, S. (2025+).**
+[1] **Zhang, X., Algeri, S. (2026+).**
   *A New Class of Asymptotically Distribution-Free Smooth Tests*  
   submitted to *Electronic Journal of Statistics*.
